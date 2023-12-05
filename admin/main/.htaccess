@@ -1,0 +1,9 @@
+RewriteEngine On 
+#RewriteBase /NortifyAdmissionPortal/
+RewriteCond %{REQUEST_FILENAME} !-d   
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}
